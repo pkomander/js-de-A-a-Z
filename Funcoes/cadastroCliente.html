@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        let nome;
+        let sobrenome;
+        let idade ;
+        // const numeroCliente;
+        let valorEmprestimo;
+        let taxaDeJuros;
+        let heBomPagador;
+
+        function cadastroCliente(nomeCliente,sobrenomeCliente,idadeCliente,numCliente,valorEmprestimoCliente,taxaDeJurosCliente,heBomPagadorCliente){
+            nome = nomeCliente;
+            sobrenome = sobrenomeCliente;
+            idade = idadeCliente;
+            // numeroCliente = numCliente;
+            valorEmprestimo = valorEmprestimoCliente;
+            taxaDeJuros = defineTaxa(idadeCliente);
+            heBomPagador = heBomPagadorCliente;
+        }
+
+        function defineTaxa(idadeCliente){
+            if(idade >= 18 && idade <= 25){
+                return 0.09;
+            }else if(idade >= 26 && idade <=35){
+                return 0.08;
+            }else if(idade >= 36 && idade <= 50){
+                return 0.07;
+            }
+            else{
+                return 0.06;
+            }
+        }
+
+        cadastroCliente("Manuel","Silva",24,150000,2,true);
+        console.log(nome);
+        console.log(sobrenome);
+        console.log(taxaDeJuros);
+        cadastroCliente("Edval","Silveira",56,150000,9,false);
+        console.log(nome);
+        console.log(sobrenome);
+        console.log(taxaDeJuros);
+    </script>
+    
+</body>
+</html>

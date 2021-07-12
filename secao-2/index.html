@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seção 2</title>
+</head>
+<body>
+    <p id="nome"></p>
+    <p id="sobrenome"></p>
+    <p id="idade"></p>
+    <p id="numeroCliente"></p>
+    <p id="valorEmprestimo"></p>
+    <p id="taxaDeJuros"></p>
+    <p id="heBomPagador"></p>
+    
+
+
+    <script>
+        let nome = "Manuel";
+        let sobrenome = "Silva";
+        let idade = 24;
+        const numeroCliente = 4654865;
+        let valorEmprestimo = 150000;
+        let taxaDeJuros = 10;
+        let heBomPagador = "SIM";
+
+
+        console.log("nome: " + nome);
+        console.log("nome: " + sobrenome);
+        console.log("nome: " + idade);
+        console.log("nome: " + numeroCliente);
+
+
+        var pNome = document.getElementById("nome").innerHTML = "Nome: " + nome;
+        var pSobrenome = document.getElementById("sobrenome").innerHTML = "Sobrenome: " + sobrenome;
+        var pIdade = document.getElementById("idade").innerHTML = "Idade: " + idade;
+        var pNumeroCLiente = document.getElementById("numeroCliente").innerHTML = "Numero Cliente: " + numeroCliente;
+        var pValorEmprestimo = document.getElementById("valorEmprestimo").innerHTML = "Valor Emprestimo: R$" + valorEmprestimo;
+        var pTaxaDeJuros = document.getElementById("taxaDeJuros").innerHTML = "Taxa De Juros: " + taxaDeJuros + "%";
+        var pHeBomPagador = document.getElementById("heBomPagador").innerHTML = "He Bom Pagador: " + heBomPagador;
+    </script>
+</body>
+</html>
