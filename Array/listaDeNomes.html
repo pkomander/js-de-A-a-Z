@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .lista-de-nomes-single{
+            padding: 10px 0;
+            margin: 20px 0;
+            display: flex;
+            border: 1px solid red;
+        }
+
+        h3{
+            padding-left: 50%;
+            text-align: center;
+        }
+    </style>
+    
+    <input type="text" placeholder="Nome" name="Nome" >
+    <input type="submit" name="acao" value="AdicionarNome" class="cadastrar"/>
+
+    <div class="lista-nomes">
+
+    </div>
+
+
+    <script>
+
+        var nomes = [];
+
+        document.querySelector('input[type=submit]').addEventListener('click',() => {
+            //pegando valor digitado em nome;
+            var inputNome = document.querySelector('input[name=Nome]');
+
+            nomes.push({
+                nome: inputNome.value
+            });
+
+            var listaNomes = document.querySelector('.lista-nomes');
+            listaNomes.innerHTML = "";
+            nomes.map(function(val){
+            console.log(val.nome)
+            listaNomes.innerHTML += `
+                <div class="lista-de-nomes-single">
+                <h3>`+ val.nome +`</h3>
+                </div>
+                `;
+            });
+            inputNome.value = "";
+        });
+
+    </script>
+</body>
+</html>

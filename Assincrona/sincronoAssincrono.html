@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // um codigo e considerado sincrono quando um comando é executado somente quando o comando
+        // anterior estiver terminado
+
+
+        //assincrono ja que a instrucao para imprimir o filme 2 demora 1500ms ele continua a execucao e no final
+        // chama o filme 2
+        // console.log("filme 1")
+        // setTimeout(console.log, 1500,"filme 2");
+        // console.log("filme 3")
+
+
+        // console.log("ola");
+        // setTimeout(console.log, 1500,"Paulo");
+        // console.log("Ricardo");
+
+
+        // callback exibe o nome e uma funcão que recebe um valor de retorno
+        function exibeNome(nome, callback){
+            setTimeout(()=>{
+                console.log(nome);
+                callback();
+            }, 1500);
+        }
+
+        console.log("Olá, ");
+        exibeNome("Manuel",function(){
+            console.log("Silva");
+        });
+    </script>
+    
+</body>
+</html>

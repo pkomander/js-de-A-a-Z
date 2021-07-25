@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de Filmes Disponiveis</h1>
+    <ul id="listaFilmes">
+        
+    </ul>
+
+
+    <script>
+
+        // textContent = so permite inserir o conteudo, o valor passado sem a tag html
+        // innerHTML = permite passar o valor completo tanto tag quanto valor
+        const listaFilmes = document.querySelector('#listaFilmes');
+
+        const filmes = [
+            {nome: "filme 1", genero:"genero 1"},
+            {nome: "filme 2", genero:"genero 2"},
+            {nome: "filme 3", genero:"genero 3"}
+
+        ];
+
+        const criaElementosUi = function(){
+            let aux = "";
+            filmes.forEach(filme => {
+                aux += `<li>Nome: ${filme.nome} Gênero: ${filme.genero}</li>`
+            });
+            listaFilmes.innerHTML = aux;
+        }
+
+        // sera exibido 3 filmes pois a function exibeFilmes demora menos do que a function adicionaFilme
+        // passando na frente na hora de executar e inserir na <li>
+        // para previnir este evento e necessario utilizar callback
+        // callback e uma function passado como variavel que sera executada depois de uma determinada ação
+        function exibeFilmes(){
+            setTimeout(criaElementosUi, 2000);
+        }
+
+        // o callback vai receber a função exibe filmes que sera executada apos o filme ser adicionado no array de fimes
+        function adicionaFilme(filme, callback){
+            setTimeout(()=>{
+                filmes.push(filme);
+                callback();
+            },3000)
+            console.log(filmes);
+        }
+
+        adicionaFilme({nome:"filme 4", genero:"genero 4"},exibeFilmes);
+    </script>
+</body>
+</html>
